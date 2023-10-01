@@ -10,5 +10,9 @@ def create100(requests):
         p.publish()
 
     return HttpResponse('done')
+def post_list(request):
+    ls= Post.objects.all()
+    content={"posts":ls}
+    return render(request, 'blog/post_list.html',content)
 
 # Create your views here.
